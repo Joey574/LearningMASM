@@ -9,5 +9,14 @@
     <MASM Include="Test.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="GS01_03_Hello_World.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="GS01_05_Variables_Constants.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="Template.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

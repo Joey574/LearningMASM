@@ -20,6 +20,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="GS01_03_Hello_World.asm" />
+    <MASM Include="GS01_05_Variables_Constants.asm" />
+    <MASM Include="Template.asm" />
     <MASM Include="Test.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -113,7 +116,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <EntryPointSymbol>mainGS01_05_Variables_Constants</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

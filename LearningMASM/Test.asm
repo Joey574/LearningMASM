@@ -4,7 +4,7 @@
 sum qword ?
 
 .code
-main PROC
+mainTest PROC
 
 	MOV Rax, 7
 	ADD Rax, 4	
@@ -12,5 +12,5 @@ main PROC
 	
 	ret
 	
-	main ENDP
+	mainTest ENDP
 	END
