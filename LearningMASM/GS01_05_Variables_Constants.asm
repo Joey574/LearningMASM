@@ -3,9 +3,9 @@ extern WriteFile: proc
 
 .data
 
-written dq ?
-
 newLine db 13,10
+
+written dq ?
 
 almostABool byte ?
 
