@@ -18,5 +18,8 @@
     <MASM Include="Template.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="WriteLine.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

@@ -24,6 +24,9 @@
     <MASM Include="GS01_05_Variables_Constants.asm" />
     <MASM Include="Template.asm" />
     <MASM Include="Test.asm" />
+    <MASM Include="WriteLine.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </MASM>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
