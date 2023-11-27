@@ -34,7 +34,7 @@ realThree real8 ?
 
 .code
 
-mainGS01_05_Variables_Constants PROC
+mainGS01_05 PROC
 
 	; init bool
 	mov Rax, 1
@@ -98,5 +98,5 @@ mainGS01_05_Variables_Constants PROC
 	
 	ret
 
-	mainGS01_05_Variables_Constants ENDP
+	mainGS01_05 ENDP
 	END
