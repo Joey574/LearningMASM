@@ -21,7 +21,7 @@ lenFour equ $-stringFour
 
 
 .code
-mainGS01_03 PROC
+main PROC
 
 
     ; Output "Hello World!"
@@ -61,6 +61,6 @@ mainGS01_03 PROC
     call    WriteFile
 
     ret
-	
-	mainGS01_03 ENDP
+
+	main ENDP
 	END

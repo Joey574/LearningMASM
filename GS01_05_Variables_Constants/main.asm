@@ -34,7 +34,7 @@ realThree real8 ?
 
 .code
 
-mainGS01_05 PROC
+main PROC
 
 	; init bool
 	mov Rax, 1
@@ -85,8 +85,8 @@ mainGS01_05 PROC
 	call WriteLine
 
 	mov ax, intOne
-	 add Rax, "0"
-	 mov [intOne], ax
+	add Rax, "0"
+	mov [intOne], ax
 
 	mov rcx, -11
     call    GetStdHandle    ; get stdout file handle
@@ -98,5 +98,5 @@ mainGS01_05 PROC
 	
 	ret
 
-	mainGS01_05 ENDP
+	main ENDP
 	END
