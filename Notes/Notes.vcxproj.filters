@@ -10,5 +10,11 @@
     <MASM Include="main.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="DataTypes.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="Declaration.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

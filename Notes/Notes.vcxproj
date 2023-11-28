@@ -20,6 +20,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="DataTypes.asm" />
+    <MASM Include="Declaration.asm" />
     <MASM Include="main.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
