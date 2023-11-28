@@ -8,7 +8,6 @@ written dq ?
 
 .code
 
-PUBLIC WriteLine
     WriteLine PROC
 
 	mov rcx, -11

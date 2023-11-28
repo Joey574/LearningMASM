@@ -29,10 +29,10 @@ t7d sqword -18446744073709551615 ; Initializes a signed DQ (duad word) same as a
 
 .code
 
-main PROC
+DataTypes PROC
 
 
 	ret
 
-	main ENDP
+	DataTypes ENDP
 	END

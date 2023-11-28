@@ -18,10 +18,10 @@ t10 DB "This is a string" ; If quotes are put around a string the assembler will
 
 .code
 
-main PROC
+Declaration PROC
 
 
 	ret
 
-	main ENDP
+	Declaration ENDP
 	END
