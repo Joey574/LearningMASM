@@ -27,7 +27,7 @@ realTwo real8 ?
 realThree real8 ?
 
 
-; byte -> byte
+; byte -> DB
 ; word (2 bytes) -> DW
 ; double word (4 bytes) -> DD
 ; quad word (8 bytes) -> DQ
