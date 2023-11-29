@@ -23,6 +23,7 @@ lenFour equ $-stringFour
 .code
 main PROC
 
+    sub rsp, 32
 
     ; Output "Hello World!"
 	mov rcx, -11
@@ -59,6 +60,8 @@ main PROC
     mov r8, lenFour
     mov r9, written
     call    WriteFile
+
+    add rsp, 32
 
     ret
 

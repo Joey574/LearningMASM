@@ -70,9 +70,9 @@ t10 DB "This is a string" ; If quotes are put around a string the assembler will
 main PROC
 
 	xor rax, rax
-	
-	mov ah, t1a
 
+	mov rax, offset t1a
+	
 	ret
 
 	main ENDP
