@@ -66,8 +66,6 @@ main PROC
 	 mov stringThree, Rax
 
 	 push stringOne
-	 mov rax, 6
-	 push rax
 
 	 call Write
 	 
