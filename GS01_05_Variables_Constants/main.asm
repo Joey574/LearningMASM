@@ -26,12 +26,6 @@ realOne real8 ?
 realTwo real8 ?
 realThree real8 ?
 
-
-; byte -> DB
-; word (2 bytes) -> DW
-; double word (4 bytes) -> DD
-; quad word (8 bytes) -> DQ
-
 .code
 
 main PROC
@@ -82,7 +76,9 @@ main PROC
     mov r9, written         ; variable to write # bytes written
     call    WriteFile       ; prints message to console
 
+	sub rsp, 32
 	call WriteLine
+	add rsp, 32
 
 	mov ax, intOne
 	add Rax, "0"

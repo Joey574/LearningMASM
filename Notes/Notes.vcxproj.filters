@@ -16,5 +16,8 @@
     <MASM Include="Declaration.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="Registers.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

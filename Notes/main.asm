@@ -44,9 +44,34 @@ t10 DB "This is a string" ; If quotes are put around a string the assembler will
 ; <===== DECLARATION ======
 
 
+; ===== Registers ======>
+
+; There are several different types of registers
+; General registers
+; Segment registers
+; Status and Control registers
+
+; For general registers there are various different ways to access it
+; RAX -> Full 64 bit register
+; EAX -> Lower 32 bit register (The upper half of RAX)
+; AX -> Lower 16 bit register (The lower half of EAX)
+; AH -> Upper 8 bit register (The upper half of AX)
+; AL -> Lower 8 bit register (The lower half of AX)
+
+; This naming convention exists for general registers
+; The following are all general registers
+; 
+
+; <===== Registers ======
+
+
 .code
 
 main PROC
+
+	xor rax, rax
+	
+	mov ah, t1a
 
 	ret
 
