@@ -6,7 +6,7 @@ extern WriteFile: proc
 written dq ?
 
 string DQ ?
-len Dq ?
+len DQ ?
 
 .code
 

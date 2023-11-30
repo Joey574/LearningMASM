@@ -10,13 +10,7 @@
     <MASM Include="main.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="Write.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="WriteLine.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="WriteReal.asm">
+    <MASM Include="..\Utilities\WriteLine.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>

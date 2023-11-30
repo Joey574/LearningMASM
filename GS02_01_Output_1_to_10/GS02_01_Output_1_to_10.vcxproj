@@ -20,16 +20,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="..\Utilities\WriteLine.asm" />
     <MASM Include="main.asm" />
-    <MASM Include="Write.asm" />
-    <MASM Include="WriteLine.asm" />
-    <MASM Include="WriteReal.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a77f8395-d0b8-4c8c-a260-e3f5bae3a3c9}</ProjectGuid>
-    <RootNamespace>Utilities</RootNamespace>
+    <ProjectGuid>{9ab9461d-7a8e-4cfa-9380-a800a7bdb3d2}</ProjectGuid>
+    <RootNamespace>GS02_01_Output_1_to_10</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

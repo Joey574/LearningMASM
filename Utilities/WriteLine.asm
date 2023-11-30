@@ -1,4 +1,4 @@
-extern GetStdHandle: proc
+xtern GetStdHandle: proc
 extern WriteFile: proc
 
 .data
@@ -10,6 +10,7 @@ len Dq ?
 
 .code
 
+PUBLIC WriteLine 
     WriteLine PROC
 
     push rbp      ; save rbp
