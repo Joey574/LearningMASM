@@ -17,7 +17,7 @@ main PROC
 	call WriteLine
 	pop rax
 	inc rax
-	cmp rax, 57
+	cmp rax, "9"
 	jle start
 
 	
