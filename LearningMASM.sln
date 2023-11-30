@@ -18,6 +18,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utilities", "Utilities\Utilities.vcxproj", "{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS02_01_Output_1_to_10", "GS02_01_Output_1_to_10\GS02_01_Output_1_to_10.vcxproj", "{9AB9461D-7A8E-4CFA-9380-A800A7BDB3D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9} = {A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,8 +78,8 @@ Global
 		{4B152D8D-5887-4619-B303-4A7B93BFF3C0}.Release|x64.Build.0 = Release|x64
 		{4B152D8D-5887-4619-B303-4A7B93BFF3C0}.Release|x86.ActiveCfg = Release|Win32
 		{4B152D8D-5887-4619-B303-4A7B93BFF3C0}.Release|x86.Build.0 = Release|Win32
-		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x64.ActiveCfg = Debug|x64
-		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x64.Build.0 = Debug|x64
+		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x64.ActiveCfg = Release|x64
+		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x64.Build.0 = Release|x64
 		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x86.ActiveCfg = Debug|Win32
 		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Debug|x86.Build.0 = Debug|Win32
 		{A77F8395-D0B8-4C8C-A260-E3F5BAE3A3C9}.Release|x64.ActiveCfg = Release|x64
