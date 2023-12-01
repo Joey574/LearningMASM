@@ -1,33 +1,52 @@
+extern CreateThread: proc
+extern WaitForSingleObject: proc
+extern CloseHandle: proc
+extern GetExitCodeThread: proc
+
+extern ThreadFunction1: proc
 
 .data
-    msgMain db "Main thread is running", 0
-    msgThread db "Thread is running", 0
-
-.data?
-    hThread HANDLE ?
-
+    ThreadHandle1   dq ?
+    ExitCode1       dw ?
+    
 .code
 
 main PROC
 
 	push rbp
 	mov rbp, rsp
+    sub rsp, 32
 
-	; Output main thread message
-    invoke  MessageBox, NULL, addr msgMain, NULL, MB_OK
+    ; Create the first thread
+    mov     rcx, offset ThreadFunction1
+    mov     rdx, 0                 ; lpParameter (not used in this example)
+    mov     r8, 0                  ; dwCreationFlags (0 for immediate thread execution)
+    mov     r9, 0                  ; lpThreadId (output parameter, not used in this example)
+    call    CreateThread
 
-    ; Create a new thread
-    invoke  CreateThread, NULL, 0, ADDR ThreadProc, NULL, 0, ADDR hThread
+    ; Save the thread handle
+    mov     ThreadHandle1, rax
 
-    ; Wait for the thread to finish (optional)
-    invoke  WaitForSingleObject, hThread, INFINITE
-    
-    ; Output message after the thread completes
-    invoke  MessageBox, NULL, addr msgMain, NULL, MB_OK
+    ; Wait for threads to finish
+    mov     rcx, ThreadHandle1
+    call    WaitForSingleObject
 
-    ; Close the thread handle
-    invoke  CloseHandle, hThread
+    ; Retrieve exit codes if needed
+    mov     rcx, ThreadHandle1
+    mov     rdx, offset ExitCode1
+    call    GetExitCodeThread
 
+    ; Clean up resources
+    mov     rcx, ThreadHandle1
+    call    CloseHandle
+
+    ; Your main program continues here
+
+    ; Exit the program
+    mov     eax, 0
+    ret
+
+    add rsp, 32
 	mov rsp,rbp
     pop rbp
 

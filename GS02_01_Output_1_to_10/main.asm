@@ -20,7 +20,6 @@ main PROC
 	cmp rax, "9"
 	jle start
 
-	
 	mov rsp,rbp
     pop rbp
 
