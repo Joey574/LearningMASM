@@ -21,8 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="main.asm" />
-    <MASM Include="Write.asm" />
-    <MASM Include="WriteLine.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -116,6 +114,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalDependencies>$(CoreLibraryDependencies);$(SolutionDir)x64\Release\Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

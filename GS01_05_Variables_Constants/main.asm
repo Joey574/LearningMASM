@@ -78,7 +78,6 @@ main PROC
 	mov al, almostABool
 	add Rax, "0"
 	push Rax
-	call Write
 	call WriteLine
 	
 	; ===== INT VALUE OUTPUT =====
@@ -92,7 +91,6 @@ main PROC
 	mov ax, intOne
 	add Rax, "0"
 	push Rax
-	call Write
 	call WriteLine
 
 	mov rax, " :tnI"
@@ -104,7 +102,6 @@ main PROC
 	mov ax, intTwo
 	add Rax, "0"
 	push Rax
-	call Write
 	call WriteLine
 
 	mov rax, " :tnI"
@@ -116,7 +113,6 @@ main PROC
 	mov ax, intThree
 	add Rax, "0"	
 	push Rax
-	call Write
 	call WriteLine
 
 	; ===== CHAR VALUE OUTPUT =====
@@ -129,7 +125,6 @@ main PROC
 	xor rax, rax
 	mov ax, charishOne
 	push rax
-	call Write
 	call WriteLine
 
 	mov rax, " :rahC"
@@ -140,7 +135,6 @@ main PROC
 	xor rax, rax
 	mov ax, charishTwo
 	push rax
-	call Write
 	call WriteLine
 
 	mov rax, " :rahC"
@@ -151,7 +145,6 @@ main PROC
 	xor rax, rax
 	mov ax, charishThree
 	push rax
-	call Write
 	call WriteLine
 
 	; ===== STRING VALUE OUTPUT =====
@@ -164,7 +157,6 @@ main PROC
 	xor rax, rax
 	mov rax, stringOne
 	push rax
-	call Write
 	call WriteLine
 
 	mov rax, " :gnirtS"
@@ -175,7 +167,6 @@ main PROC
 	xor rax, rax
 	mov rax, stringTwo
 	push rax
-	call Write
 	call WriteLine
 
 	mov rax, " :gnirtS"
@@ -186,7 +177,6 @@ main PROC
 	xor rax, rax
 	mov rax, stringThree
 	push rax
-	call Write
 	call WriteLine
 
 	mov rsp,rbp
