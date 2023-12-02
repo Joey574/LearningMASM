@@ -1,23 +1,21 @@
-extern WriteLine: proc
+extern Write: proc
 
 .data
 
 .code
 
 stringOne db 64 dup (?)
-stringTwo db "testing write function"
+stringTwo db "testing write function",0
 
 main PROC
 	
 	push rbp
 	mov rbp, rsp
 
-	mov stringOne, "testing write function"
-
-	;mov rax, "etirw gnitset"
+	lea rax, stringTwo
 	push rax
 	
-	call WriteLine
+	call Write
 
 	mov rsp, rbp
 	pop rbp
