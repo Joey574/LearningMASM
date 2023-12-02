@@ -10,20 +10,5 @@
     <MASM Include="main.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="Write.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="WriteLine.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="WriteReal.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="CopyArray.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="ConvertNumberToASCII.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
   </ItemGroup>
 </Project>
