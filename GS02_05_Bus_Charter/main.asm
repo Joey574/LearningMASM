@@ -1,5 +1,6 @@
 extern Write: proc
 extern WriteLine: proc
+extern ConvertNumberToASCII: proc
 
 .data
 
@@ -24,6 +25,7 @@ main PROC
 
 	push rbp
 	mov rbp, rsp
+	sub rsp, 64
 
 	mov rax, offset intro
 	push rax
@@ -38,22 +40,22 @@ main PROC
 	mov rax, 84
 	mov [people], rax
 
-	mov rax, people ; Setting number of people on tour
+	mov rax, people ; Setting dividend to number of people on tour
 	xor edx, edx ; Clear edx, upper 32 bits of dividend
 	mov rcx, bus ; Set divider, in this case 60
 
 	div rcx ; Divide
 
-	mov [bussesNeeded], rax ; Get number of busses needed
+	mov [bussesNeeded], rax ; Store number of busses needed
 	mov rax, rdx ; Move into rax the remainder, setting up for next div operation
 	xor edx, edx ; Clear upper 32 bits again
 	mov rcx, van ; Set divider, in this case 7
 	
 	div rcx ; Divide
 
-	mov [vansNeeded], rax ; Get number of busses needed
+	mov [vansNeeded], rax ; Store number of vans needed
 	cmp rdx, 0 ; Check if remainder is 0
-	je skip ; If it is equal skip
+	je skip ; If it is, skip
 	inc vansNeeded ; If not equal inc one more van
 	skip:
 
@@ -64,7 +66,7 @@ main PROC
 	mov rax, offset bussesNeeded
 	push rax
 	call ConvertNumberToASCII
-	pop rax
+	push rax
 	call WriteLine
 
 	mov rax, offset outPrompt2
@@ -74,9 +76,10 @@ main PROC
 	mov rax, offset bussesNeeded
 	push rax
 	call ConvertNumberToASCII
-	pop rax
+	push rax
 	call WriteLine
 
+	add rsp, 64
 	mov rsp,rbp
     pop rbp
 
