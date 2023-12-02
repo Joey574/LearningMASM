@@ -4,15 +4,14 @@ extern Write: proc
 
 .code
 
-stringOne db 64 dup (?)
-stringTwo db "testing write function",0
+stringOne db "testing write function",0
 
 main PROC
 	
 	push rbp
 	mov rbp, rsp
 
-	lea rax, stringTwo
+	lea rax, stringOne
 	push rax
 	
 	call Write
