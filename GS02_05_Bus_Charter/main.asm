@@ -25,7 +25,7 @@ main PROC
 
 	push rbp
 	mov rbp, rsp
-	sub rsp, 64
+	sub rsp, 32
 
 	mov rax, offset intro
 	push rax
@@ -73,13 +73,13 @@ main PROC
 	push rax
 	call Write
 
-	mov rax, offset bussesNeeded
+	mov rax, offset vansNeeded
 	push rax
 	call ConvertNumberToASCII
 	push rax
 	call WriteLine
 
-	add rsp, 64
+	add rsp, 32
 	mov rsp,rbp
     pop rbp
 

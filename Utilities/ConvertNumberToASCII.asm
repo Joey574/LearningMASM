@@ -8,7 +8,7 @@ ConvertNumberToASCII PROC
 
 	push rbp
 	mov rbp, rsp
-	sub rsp, 64
+	sub rsp, 32
 
 	mov rax, [rbp+16]
 	mov rcx, offset final
@@ -28,7 +28,7 @@ ConvertNumberToASCII PROC
 
 	mov rax, offset final
 	
-	add rsp, 64
+	add rsp, 32
 	mov rsp,rbp
     pop rbp
 
