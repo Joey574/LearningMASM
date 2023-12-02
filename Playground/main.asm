@@ -1,4 +1,5 @@
 extern Write: proc
+extern WriteLine: proc
 
 .data
 
@@ -14,7 +15,7 @@ main PROC
 	lea rax, stringOne
 	push rax
 	
-	call Write
+	call WriteLine
 
 	mov rsp, rbp
 	pop rbp

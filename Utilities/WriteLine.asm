@@ -5,12 +5,11 @@ extern WriteFile: proc
 
 written dq ?
 
-string DQ ?
-len Dq ?
+string db 256 dup (0)
+len DQ ?
 
 .code
 
-PUBLIC WriteLine 
     WriteLine PROC
 
     push rbp      ; save rbp
@@ -18,21 +17,26 @@ PUBLIC WriteLine
     sub rsp,64    ; reserve 64 bytes for local variables
 
     mov rax, [rbp+16]
-    mov string, rax
-
+    mov rbx, offset string
     xor rcx, rcx
-    mov rbx, 0d0ah
-    loc:
-    shr rax, 8
-    shl rbx, 8
-    inc rcx
-    cmp rax, 0
-    jne loc
+    xor rsi, rsi
 
-    add string, rbx
+    copyLoop:
+        mov cl, [rax] ; Load a byte from the source array
+        mov [rbx], cl ; Store the byte in the destination array
+        inc rax ; Move to the next byte in the source array
+        inc rbx ; Move to the next byte in the destination array
+        inc rsi ; Count string length
+        cmp cl, 0
+        jne copyLoop ; Repeat until all bytes are copied
 
-    mov len, rcx
-    add len, 2
+    mov cl, 13
+    mov [rbx], cl
+    mov cl, 10
+    mov [rbx+1], cl
+    add rsi, 2
+
+    mov len, rsi
 
 	mov rcx, -11
     call    GetStdHandle
