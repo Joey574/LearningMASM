@@ -80,106 +80,87 @@ main PROC
 	xor rax, rax
 	add almostABool, "0"
 	mov rax, offset almostABool
-	push Rax
 	call WriteLine
 	
 	; ===== INT VALUE OUTPUT =====
 
 	mov rax, offset labelInt
-	push rax
 	call Write
 
 	; Output intOne
 	xor rax, rax
 	add intOne, "0"
 	mov Rax, offset intOne
-	push Rax
 	call WriteLine
 
 	mov rax, offset labelInt
-	push rax
 	call Write
 
 	; Output intTwo
 	xor rax, rax
 	add intTwo, "0"
 	mov Rax, offset intTwo
-	push Rax
 	call WriteLine
 
 	mov rax, offset labelInt
-	push rax
 	call Write
 
 	; Output intThree
 	xor rax, rax
 	add intThree, "0"
 	mov Rax, offset intThree
-	push Rax
 	call WriteLine
 
 	; ===== CHAR VALUE OUTPUT =====
 
 	mov rax, offset labelChar
-	push rax
 	call Write
 
 	; Output char one
 	xor rax, rax
 	mov rax, offset charishOne
-	push rax
 	call WriteLine
 
 	mov rax, offset labelChar
-	push rax
 	call Write
 
 	; Output char two
 	xor rax, rax
 	mov rax, offset charishTwo
-	push rax
 	call WriteLine
 
 	mov rax, offset labelChar
-	push rax
 	call Write
 
 	; Output char three
 	xor rax, rax
 	mov rax, offset charishThree
-	push rax
 	call WriteLine
 
 	; ===== STRING VALUE OUTPUT =====
 
 	mov rax, offset labelString
-	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
 	mov rax, offset stringOne
-	push rax
 	call WriteLine
 
 	mov rax, offset labelString
-	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
 	mov rax, offset stringTwo
-	push rax
 	call WriteLine
 
 	mov rax, offset labelString
-	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
 	mov rax, offset stringThree
-	push rax
 	call WriteLine
 
 	mov rsp,rbp

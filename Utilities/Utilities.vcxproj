@@ -20,6 +20,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="ClearConsole.asm" />
     <MASM Include="ConvertNumberToASCII.asm" />
     <MASM Include="CopyArray.asm" />
     <MASM Include="main.asm" />

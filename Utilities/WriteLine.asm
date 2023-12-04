@@ -16,7 +16,6 @@ len DQ ?
     mov rbp,rsp   ; rbp = pointer to return address (8 bytes)
     sub rsp,64    ; reserve 64 bytes for local variables
 
-    mov rax, [rbp+16]
     mov rbx, offset string
     xor rcx, rcx
     xor rsi, rsi

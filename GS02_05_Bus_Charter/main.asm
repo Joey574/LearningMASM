@@ -1,14 +1,15 @@
 extern Write: proc
 extern WriteLine: proc
 extern ConvertNumberToASCII: proc
+extern ClearConsole: proc
 
 .data
 
 userName db 256 dup (0)
 people dq ?
 
-bus dq 60
-van dq 7
+busCapacity dq 60
+vanCapacity dq 7
 
 bussesNeeded dq ?
 vansNeeded dq ?
@@ -25,31 +26,35 @@ main PROC
 
 	push rbp
 	mov rbp, rsp
-	sub rsp, 32
+	sub rsp, 64
 
 	mov rax, offset intro
-	push rax
 	call Write
 
+	; Get name
+	call ClearConsole
+
 	mov rax, offset prompt
-	push rax
 	call Write
 
 	; Get number
+	call ClearConsole
 
+	; Test purposes for logic
 	mov rax, 84
 	mov [people], rax
 
+	; Logic
 	mov rax, people ; Setting dividend to number of people on tour
 	xor edx, edx ; Clear edx, upper 32 bits of dividend
-	mov rcx, bus ; Set divider, in this case 60
+	mov rcx, busCapacity ; Set divider, in this case 60
 
 	div rcx ; Divide
 
 	mov [bussesNeeded], rax ; Store number of busses needed
 	mov rax, rdx ; Move into rax the remainder, setting up for next div operation
 	xor edx, edx ; Clear upper 32 bits again
-	mov rcx, van ; Set divider, in this case 7
+	mov rcx, vanCapacity ; Set divider, in this case 7
 	
 	div rcx ; Divide
 
@@ -60,26 +65,20 @@ main PROC
 	skip:
 
 	mov rax, offset outPrompt1
-	push rax
 	call Write
 
 	mov rax, offset bussesNeeded
-	push rax
 	call ConvertNumberToASCII
-	push rax
 	call WriteLine
 
 	mov rax, offset outPrompt2
-	push rax
 	call Write
 
 	mov rax, offset vansNeeded
-	push rax
 	call ConvertNumberToASCII
-	push rax
 	call WriteLine
 
-	add rsp, 32
+	add rsp, 64
 	mov rsp,rbp
     pop rbp
 

@@ -10,7 +10,6 @@ ConvertNumberToASCII PROC
 	mov rbp, rsp
 	sub rsp, 32
 
-	mov rax, [rbp+16]
 	mov rcx, offset final
 
 	xor rbx, rbx

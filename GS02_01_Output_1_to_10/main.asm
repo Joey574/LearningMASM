@@ -13,7 +13,6 @@ main PROC
 
 	start:
 	mov rax, offset value
-	push rax
 	call WriteLine
 	inc value
 	cmp value, "9"
