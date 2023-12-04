@@ -25,8 +25,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4d4e6723-b4ae-4428-8b45-98b8344345b1}</ProjectGuid>
-    <RootNamespace>GS01_05_Variables_Constants</RootNamespace>
+    <ProjectGuid>{3653ac9b-a71a-4579-a4d4-e74a76bfb0aa}</ProjectGuid>
+    <RootNamespace>GS02_05_Bus_Charter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

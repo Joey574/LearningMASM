@@ -2,6 +2,8 @@ extern WriteLine: proc
 
 .data
 
+value db "0"
+
 .code
 
 main PROC
@@ -9,15 +11,12 @@ main PROC
 	push rbp
 	mov rbp, rsp
 
-	xor rax, rax
-	mov al, "0"
-
 	start:
+	mov rax, offset value
 	push rax
 	call WriteLine
-	pop rax
-	inc rax
-	cmp rax, "9"
+	inc value
+	cmp value, "9"
 	jle start
 
 	mov rsp,rbp

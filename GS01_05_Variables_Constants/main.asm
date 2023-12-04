@@ -1,9 +1,12 @@
-extern GetStdHandle: proc
-extern WriteFile: proc
 extern WriteLine: proc
 extern Write: proc
 
 .data
+
+labelBool db "Bool: ",0
+labelInt db "Int: ",0
+labelChar db "Char: ",0
+labelString db "String: ",0
 
 newLine db 13,10
 
@@ -70,123 +73,113 @@ main PROC
 
 	; ===== BOOLEAN VALUE OUTPUT =====
 
-	mov rax, " :looB"
+	mov rax, offset labelBool
 	push rax
 	call Write
 
 	xor rax, rax
-	mov al, almostABool
-	add Rax, "0"
+	add almostABool, "0"
+	mov rax, offset almostABool
 	push Rax
-	call Write
 	call WriteLine
 	
 	; ===== INT VALUE OUTPUT =====
 
-	mov rax, " :tnI"
+	mov rax, offset labelInt
 	push rax
 	call Write
 
 	; Output intOne
 	xor rax, rax
-	mov ax, intOne
-	add Rax, "0"
+	add intOne, "0"
+	mov Rax, offset intOne
 	push Rax
-	call Write
 	call WriteLine
 
-	mov rax, " :tnI"
+	mov rax, offset labelInt
 	push rax
 	call Write
 
 	; Output intTwo
 	xor rax, rax
-	mov ax, intTwo
-	add Rax, "0"
+	add intTwo, "0"
+	mov Rax, offset intTwo
 	push Rax
-	call Write
 	call WriteLine
 
-	mov rax, " :tnI"
+	mov rax, offset labelInt
 	push rax
 	call Write
 
 	; Output intThree
 	xor rax, rax
-	mov ax, intThree
-	add Rax, "0"	
+	add intThree, "0"
+	mov Rax, offset intThree
 	push Rax
-	call Write
 	call WriteLine
 
 	; ===== CHAR VALUE OUTPUT =====
 
-	mov rax, " :rahC"
+	mov rax, offset labelChar
 	push rax
 	call Write
 
 	; Output char one
 	xor rax, rax
-	mov ax, charishOne
+	mov rax, offset charishOne
 	push rax
-	call Write
 	call WriteLine
 
-	mov rax, " :rahC"
+	mov rax, offset labelChar
 	push rax
 	call Write
 
 	; Output char two
 	xor rax, rax
-	mov ax, charishTwo
+	mov rax, offset charishTwo
 	push rax
-	call Write
 	call WriteLine
 
-	mov rax, " :rahC"
+	mov rax, offset labelChar
 	push rax
 	call Write
 
 	; Output char three
 	xor rax, rax
-	mov ax, charishThree
+	mov rax, offset charishThree
 	push rax
-	call Write
 	call WriteLine
 
 	; ===== STRING VALUE OUTPUT =====
 
-	mov rax, " :gnirtS"
+	mov rax, offset labelString
 	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
-	mov rax, stringOne
+	mov rax, offset stringOne
 	push rax
-	call Write
 	call WriteLine
 
-	mov rax, " :gnirtS"
+	mov rax, offset labelString
 	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
-	mov rax, stringTwo
+	mov rax, offset stringTwo
 	push rax
-	call Write
 	call WriteLine
 
-	mov rax, " :gnirtS"
+	mov rax, offset labelString
 	push rax
 	call Write
 
 	; Output string one
 	xor rax, rax
-	mov rax, stringThree
+	mov rax, offset stringThree
 	push rax
-	call Write
 	call WriteLine
 
 	mov rsp,rbp
