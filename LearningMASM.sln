@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multithreading", "Multithre
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS02_05_Bus_Charter", "GS02_05_Bus_Charter\GS02_05_Bus_Charter.vcxproj", "{3653AC9B-A71A-4579-A4D4-E74A76BFB0AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RAMFiller", "RAMFiller\RAMFiller.vcxproj", "{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{3653AC9B-A71A-4579-A4D4-E74A76BFB0AA}.Release|x64.Build.0 = Release|x64
 		{3653AC9B-A71A-4579-A4D4-E74A76BFB0AA}.Release|x86.ActiveCfg = Release|Win32
 		{3653AC9B-A71A-4579-A4D4-E74A76BFB0AA}.Release|x86.Build.0 = Release|Win32
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Debug|x64.ActiveCfg = Debug|x64
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Debug|x64.Build.0 = Debug|x64
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Debug|x86.ActiveCfg = Debug|Win32
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Debug|x86.Build.0 = Debug|Win32
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Release|x64.ActiveCfg = Release|x64
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Release|x64.Build.0 = Release|x64
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Release|x86.ActiveCfg = Release|Win32
+		{4B26340E-B6ED-4D26-BDE9-0ED2CC32D695}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
