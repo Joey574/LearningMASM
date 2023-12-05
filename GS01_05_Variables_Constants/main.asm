@@ -73,94 +73,84 @@ main PROC
 
 	; ===== BOOLEAN VALUE OUTPUT =====
 
-	mov rax, offset labelBool
-	push rax
+	mov rcx, offset labelBool
 	call Write
 
-	xor rax, rax
 	add almostABool, "0"
-	mov rax, offset almostABool
+	mov rcx, offset almostABool
 	call WriteLine
 	
 	; ===== INT VALUE OUTPUT =====
 
-	mov rax, offset labelInt
+	mov rcx, offset labelInt
 	call Write
 
 	; Output intOne
-	xor rax, rax
 	add intOne, "0"
-	mov Rax, offset intOne
+	mov rcx, offset intOne
 	call WriteLine
 
-	mov rax, offset labelInt
+	mov rcx, offset labelInt
 	call Write
 
 	; Output intTwo
-	xor rax, rax
 	add intTwo, "0"
-	mov Rax, offset intTwo
+	mov rcx, offset intTwo
 	call WriteLine
 
-	mov rax, offset labelInt
+	mov rcx, offset labelInt
 	call Write
 
 	; Output intThree
-	xor rax, rax
 	add intThree, "0"
-	mov Rax, offset intThree
+	mov rcx, offset intThree
 	call WriteLine
 
 	; ===== CHAR VALUE OUTPUT =====
 
-	mov rax, offset labelChar
+	mov rcx, offset labelChar
+	mov rcx, offset labelChar
 	call Write
 
 	; Output char one
-	xor rax, rax
-	mov rax, offset charishOne
+	mov rcx, offset charishOne
 	call WriteLine
 
-	mov rax, offset labelChar
+	mov rcx, offset labelChar
 	call Write
 
 	; Output char two
-	xor rax, rax
-	mov rax, offset charishTwo
+	mov rcx, offset charishTwo
 	call WriteLine
 
-	mov rax, offset labelChar
+	mov rcx, offset labelChar
 	call Write
 
 	; Output char three
-	xor rax, rax
-	mov rax, offset charishThree
+	mov rcx, offset charishThree
 	call WriteLine
 
 	; ===== STRING VALUE OUTPUT =====
 
-	mov rax, offset labelString
+	mov rcx, offset labelString
 	call Write
 
 	; Output string one
-	xor rax, rax
-	mov rax, offset stringOne
+	mov rcx, offset stringOne
 	call WriteLine
 
-	mov rax, offset labelString
+	mov rcx, offset labelString
 	call Write
 
 	; Output string one
-	xor rax, rax
-	mov rax, offset stringTwo
+	mov rcx, offset stringTwo
 	call WriteLine
 
-	mov rax, offset labelString
+	mov rcx, offset labelString
 	call Write
 
 	; Output string one
-	xor rax, rax
-	mov rax, offset stringThree
+	mov rcx, offset stringThree
 	call WriteLine
 
 	mov rsp,rbp
