@@ -10,22 +10,22 @@ ConvertNumberToASCII PROC
 	mov rbp, rsp
 	sub rsp, 32
 
-	mov rcx, offset final
+	mov r10, offset final ; output
 
 	xor rbx, rbx
 
 	convertLoop:
-	    mov bl, [rax] ; Load a byte from the source array
+	    mov bl, [rcx] ; Load a byte from the source array
 		cmp bl, 0
 		je complete
  		add bl, "0"
-        mov [rcx], bl ; Store the byte in the destination array
-        inc rax ; Move to the next byte in the source array
-        inc rcx ; Move to the next byte in the destination array
+        mov [r10], bl ; Store the byte in the destination array
+        inc rcx ; Move to the next byte in the source array
+        inc r10 ; Move to the next byte in the destination array
         jmp convertLoop ; Repeat until all bytes are copied
 	complete:
 
-	mov rax, offset final
+	mov rax, offset final ; output
 	
 	add rsp, 32
 	mov rsp,rbp

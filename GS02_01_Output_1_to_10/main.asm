@@ -12,7 +12,7 @@ main PROC
 	mov rbp, rsp
 
 	start:
-	mov rax, offset value
+	mov rcx, offset value
 	call WriteLine
 	inc value
 	cmp value, "9"

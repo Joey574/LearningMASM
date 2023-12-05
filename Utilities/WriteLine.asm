@@ -6,7 +6,6 @@ extern WriteFile: proc
 written dq ?
 
 string db 256 dup (0)
-len DQ ?
 
 .code
 
@@ -16,32 +15,30 @@ len DQ ?
     mov rbp,rsp   ; rbp = pointer to return address (8 bytes)
     sub rsp,64    ; reserve 64 bytes for local variables
 
-    mov rbx, offset string
-    xor rcx, rcx
-    xor rsi, rsi
+    mov r10, offset string ; address of local string
+    xor r11, r11 ; store string length
 
     copyLoop:
-        mov cl, [rax] ; Load a byte from the source array
-        mov [rbx], cl ; Store the byte in the destination array
-        inc rax ; Move to the next byte in the source array
-        inc rbx ; Move to the next byte in the destination array
-        inc rsi ; Count string length
-        cmp cl, 0
+        mov al, [rcx] ; Load a byte from the source array
+        mov [r10], al ; Store the byte in the destination array
+        inc rcx ; Move to the next byte in the source array
+        inc r10 ; Move to the next byte in the destination array
+        inc r11 ; Count string length
+        cmp al, 0
         jne copyLoop ; Repeat until all bytes are copied
 
-    mov cl, 13
-    mov [rbx], cl
-    mov cl, 10
-    mov [rbx+1], cl
-    add rsi, 2
-
-    mov len, rsi
+    ; add new line instruction and adjust length
+    mov al, 13
+    mov [r10], al
+    mov al, 10
+    mov [r10+1], al
+    add r11, 2
 
 	mov rcx, -11
     call    GetStdHandle
     mov rcx, rax
     mov rdx, offset string
-    mov r8, len
+    mov r8, r11
     mov r9, written
     call    WriteFile
 

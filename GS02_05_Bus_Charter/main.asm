@@ -28,17 +28,17 @@ main PROC
 	mov rbp, rsp
 	sub rsp, 64
 
-	mov rax, offset intro
+	mov rcx, offset intro
 	call Write
 
 	; Get name
-	call ClearConsole
+	; call ClearConsole
 
-	mov rax, offset prompt
+	mov rcx, offset prompt
 	call Write
 
 	; Get number
-	call ClearConsole
+	; call ClearConsole
 
 	; Test purposes for logic
 	mov rax, 84
@@ -64,18 +64,20 @@ main PROC
 	inc vansNeeded ; If not equal inc one more van
 	skip:
 
-	mov rax, offset outPrompt1
+	mov rcx, offset outPrompt1
 	call Write
 
-	mov rax, offset bussesNeeded
+	mov rcx, offset bussesNeeded
 	call ConvertNumberToASCII
+	mov rcx, rax
 	call WriteLine
 
-	mov rax, offset outPrompt2
+	mov rcx, offset outPrompt2
 	call Write
 
-	mov rax, offset vansNeeded
+	mov rcx, offset vansNeeded
 	call ConvertNumberToASCII
+	mov rcx, rax
 	call WriteLine
 
 	add rsp, 64
