@@ -2,22 +2,20 @@
 
 .code
 
+; rcx source array
+; rdx desitnation array
 CopyArray PROC
 
 	push rbp
 	mov rbp, rsp
 	sub rsp, 64
 
-	mov rax, [rbp+16]
-	mov rbx, [rbp+8]
-
 	 copyLoop:
-        mov cl, [rax] ; Load a byte from the source array
-        mov [rbx], cl ; Store the byte in the destination array
-        inc rax ; Move to the next byte in the source array
-        inc rbx ; Move to the next byte in the destination array
-        inc rsi ; Count string length
-        cmp cl, 0
+        mov r10b, [rcx] ; Load a byte from the source array
+        mov [rdx], r10b ; Store the byte in the destination array
+        inc rcx ; Move to the next byte in the source array
+        inc rdx ; Move to the next byte in the destination array
+        cmp r10b, 0
         jne copyLoop ; Repeat until all bytes are copied
 	
 	add rsp, 64

@@ -2,10 +2,13 @@ extern Write: proc
 extern WriteLine: proc
 extern ConvertNumberToASCII: proc
 extern ClearConsole: proc
+extern ReadLine: proc
+extern CopyArray: proc
 
 .data
 
 userName db 256 dup (0)
+length db ?
 people dq ?
 
 busCapacity dq 60
@@ -15,7 +18,8 @@ bussesNeeded dq ?
 vansNeeded dq ?
 
 intro db "Hello, please enter your name: ",0
-prompt db "Please enter the number of people on the tour: ",0
+promptA db "Please enter the number of people on the tour ",0
+promptB db ": ",0
 
 outPrompt1 db "Busses needed: ",0
 outPrompt2 db "Vans needed: ",0
@@ -32,17 +36,32 @@ main PROC
 	call Write
 
 	; Get name
+	call ReadLine
+	mov length, cl ; length of input
+
+	mov rcx,rax
+	mov rdx, offset userName
+	call CopyArray
 	; call ClearConsole
 
-	mov rcx, offset prompt
+	; First prompt
+	mov rcx, offset promptA
 	call Write
 
-	; Get number
-	; call ClearConsole
+	; add ": " to end of name for output
+	mov r10, offset userName
+	mov [r10 + length], 58
 
-	; Test purposes for logic
-	mov rax, 84
-	mov [people], rax
+	; address the user directly + ": "
+	mov rcx, offset userName
+	call Write
+
+	nop
+
+	; Get number
+	call readLine
+	mov [people], qword ptr rax
+	; call ClearConsole
 
 	; Logic
 	mov rax, people ; Setting dividend to number of people on tour
