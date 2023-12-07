@@ -1,6 +1,7 @@
 extern Write: proc
 extern WriteLine: proc
 extern ConvertNumberToASCII: proc
+extern ConvertASCIIToNumber: proc
 extern ClearConsole: proc
 extern ReadLine: proc
 extern CopyArray: proc
@@ -8,7 +9,6 @@ extern CopyArray: proc
 .data
 
 userName db 256 dup (0)
-length db ?
 people dq ?
 
 busCapacity dq 60
@@ -37,35 +37,39 @@ main PROC
 
 	; Get name
 	call ReadLine
-	mov length, cl ; length of input
-
-	mov rcx,rax
+	push rcx ; store length
+	mov rcx, rax
 	mov rdx, offset userName
 	call CopyArray
+	pop rcx ; retrieve length
+
+	; add ": " to end of name for output
+	mov rdx, offset userName
+	add rdx, rcx
+	mov byte ptr [rdx], 0 ; remove new line
+	mov byte ptr [rdx-1], 0 ; remove new line
+	mov word ptr [rdx-2], " :"
+
 	; call ClearConsole
 
 	; First prompt
 	mov rcx, offset promptA
 	call Write
 
-	; add ": " to end of name for output
-	mov r10, offset userName
-	mov [r10 + length], 58
-
 	; address the user directly + ": "
 	mov rcx, offset userName
 	call Write
 
-	nop
-
 	; Get number
 	call readLine
-	mov [people], qword ptr rax
+	mov rcx, rax
+	call ConvertASCIIToNumber
+	mov [people], rax
 	; call ClearConsole
 
 	; Logic
-	mov rax, people ; Setting dividend to number of people on tour
 	xor edx, edx ; Clear edx, upper 32 bits of dividend
+	mov rax, people ; Setting dividend to number of people on tour
 	mov rcx, busCapacity ; Set divider, in this case 60
 
 	div rcx ; Divide

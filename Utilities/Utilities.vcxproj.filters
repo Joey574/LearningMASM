@@ -31,5 +31,8 @@
     <MASM Include="ReadLine.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="ConvertASCIIToNumber.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

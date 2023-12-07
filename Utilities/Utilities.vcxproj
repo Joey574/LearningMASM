@@ -21,6 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="ClearConsole.asm" />
+    <MASM Include="ConvertASCIIToNumber.asm" />
     <MASM Include="ConvertNumberToASCII.asm" />
     <MASM Include="CopyArray.asm" />
     <MASM Include="main.asm" />

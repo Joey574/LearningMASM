@@ -28,6 +28,8 @@ ReadLine PROC
     ;mov     byte ptr [buffer + bytesRead], 0
 
     mov rax, offset buffer ; first return
+
+    xor rcx, rcx
     mov cl, bytesRead ; idk where a 2nd return value is supposed to go so I'll put it here
 
     add rsp,64    ; reserve 64 bytes for local variables
