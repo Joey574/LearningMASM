@@ -29,8 +29,7 @@ ConvertASCIIToNumber PROC
         inc rcx ; Move to the next byte in the source array
         inc r11 ; Move to the next byte in the destination array
 		inc rax ; count length
-        cmp r10b, 0
-        jne copyLoop ; Repeat until all bytes are copied
+        jmp copyLoop ; Repeat until all bytes are copied
 	skip:
 
 	mov len, rax
