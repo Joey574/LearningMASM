@@ -11,6 +11,7 @@ ConvertNumberToASCII PROC
 	sub rsp, 32
 
 	mov r10, offset final ; output
+	mov byte ptr [r10], "0" ; default return value
 
 	xor rbx, rbx
 

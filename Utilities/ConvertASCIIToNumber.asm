@@ -36,20 +36,20 @@ ConvertASCIIToNumber PROC
 	mov len, rax
 
 	xor r11, r11 ; store counter 
-	xor rcx, rcx ; store final
+	xor rcx, rcx ; store byte
+	xor rax, rax ; store final
 	mov r10, offset valueArray ; store value array pointer
 	mov rbx, 10
 
 	FinalOutLoop:
-		xor rax, rax ; prep for move
-		mov al, byte ptr [r10] ; store byte
+		xor rcx, rcx ; prep for move
+		mov cl, byte ptr [r10] ; store byte
+		add rax, rcx
 		inc r11
 
 		cmp r11, len
 		jl multiplyValues ; see if there are more bytes to add
 		back:
-
-		add rcx, rax ; store final
 
 		inc r10
 		cmp r11, len ; compare length with loop counter
@@ -60,8 +60,6 @@ ConvertASCIIToNumber PROC
 	mul rbx
 	jmp back
 	OutSkip:
-
-	mov rax, rcx ; store final in rax
 
 	mov rsp,rbp
     pop rbp
