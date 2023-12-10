@@ -24,6 +24,7 @@
     <MASM Include="ConvertASCIIToNumber.asm" />
     <MASM Include="ConvertNumberToASCII.asm" />
     <MASM Include="CopyArray.asm" />
+    <MASM Include="FlipArray.asm" />
     <MASM Include="main.asm" />
     <MASM Include="ReadLine.asm" />
     <MASM Include="Write.asm" />

@@ -5,6 +5,7 @@ extern ConvertASCIIToNumber: proc
 extern ClearConsole: proc
 extern ReadLine: proc
 extern CopyArray: proc
+extern FlipArray: proc
 
 .data
 
@@ -90,16 +91,20 @@ main PROC
 	mov rcx, offset outPrompt1
 	call Write
 
-	mov rcx, offset bussesNeeded
+	mov rcx, bussesNeeded
 	call ConvertNumberToASCII
+	mov rcx, rax
+	call FlipArray
 	mov rcx, rax
 	call WriteLine
 
 	mov rcx, offset outPrompt2
 	call Write
 
-	mov rcx, offset vansNeeded
+	mov rcx, vansNeeded
 	call ConvertNumberToASCII
+	mov rcx, rax
+	call FlipArray
 	mov rcx, rax
 	call WriteLine
 

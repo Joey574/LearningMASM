@@ -1,7 +1,9 @@
-extern Write: proc
+extern ConvertNumberToASCII: proc
 extern WriteLine: proc
+extern FlipArray: proc
 
 .data
+
 
 .code
 
@@ -12,11 +14,17 @@ main PROC
 	push rbp
 	mov rbp, rsp
 
-	lea rax, stringOne
-	push rax
-	
-	call WriteLine
+	mov rcx, 123
+	call ConvertNumberToASCII
 
+	mov rcx, rax
+	
+
+	call FlipArray
+
+	mov rcx, rax
+	call WriteLine
+	
 	mov rsp, rbp
 	pop rbp
 

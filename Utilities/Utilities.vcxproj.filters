@@ -34,5 +34,8 @@
     <MASM Include="ConvertASCIIToNumber.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="FlipArray.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
