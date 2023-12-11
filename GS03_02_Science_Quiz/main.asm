@@ -60,7 +60,11 @@ main PROC
 	; read input
 	call ReadLine
 	cmp byte ptr [rax], "d"
-	jne skipA
+	je incA
+	cmp byte ptr [rax], "D"
+	je incA
+	jmp skipA
+	incA:
 	inc score
 	skipA:
 
@@ -74,7 +78,11 @@ main PROC
 	; read input
 	call ReadLine
 	cmp byte ptr [rax], "a"
-	jne skipB
+	je incB
+	cmp byte ptr [rax], "A"
+	je incB
+	jmp skipB
+	incB:
 	inc score
 	skipB:
 
@@ -88,7 +96,11 @@ main PROC
 	; read input
 	call ReadLine
 	cmp byte ptr [rax], "c"
-	jne skipC
+	je incC
+	cmp byte ptr [rax], "C"
+	je incC
+	jmp skipC
+	incC:
 	inc score
 	skipC:
 
