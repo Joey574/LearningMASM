@@ -18,6 +18,8 @@ qOne db "what is the speed of light?",13,10,"A) 272,182,455 m/s",13,10,"B) 152,9
 qTwo db "what is the largest object in the the solar system?",13,10,"A) Sun",13,10,"B) Saturn",13,10,"C) Earth",13,10,"D) Jupiter",0
 qThree db "in MASM x64, what register is used to pass the first argument?",13,10,"A) RAX",13,10,"B) R8", 13,10,"C) RCX",13,10,"D) R10",0
 
+negSign db "-",0
+
 outputPromptOne db "You got ",0
 outputPromptTwo db "/12",0
 
@@ -146,9 +148,16 @@ main PROC
 	call Write
 
 	; score
+	cmp score, 0
+	jge skipConvert
+	mov rcx, offset negSign
+	call Write
+	neg score
+	skipConvert:
+
 	xor rcx, rcx
 	mov cl, score
-	call ConvertNumberToASCII
+ 	call ConvertNumberToASCII
 	mov rcx, rax
 	call FlipArray
 	mov rcx, rax
