@@ -2,6 +2,8 @@ extern Write: proc
 
 .data
 
+outputString db "running"
+
 .code
 
 ThreadFunction1 PROC
@@ -9,8 +11,7 @@ ThreadFunction1 PROC
 	push rbp
 	mov rbp, rsp
 
-	mov rax, "gninnur"
-	push rax
+	mov rcx, offset outputString
 	call Write
 
 	mov rsp,rbp

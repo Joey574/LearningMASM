@@ -3,6 +3,8 @@
 final db 256 Dup (0)
 divVal dd 10
 
+endZero db 0
+
 .code
 
 ; rcx, value to convert to ASCII
@@ -20,6 +22,11 @@ ConvertNumberToASCII PROC
 
 	mov rax, rcx
 
+	cmp rax, 10
+	jl skip
+	inc endZero
+	skip:
+
 	divLoop:
 
 		; div rax by 10
@@ -33,8 +40,11 @@ ConvertNumberToASCII PROC
 		cmp rax, 10
 		jg divLoop
 
+	cmp endZero, 0
+	je skipZero
 	add al, "0"
 	mov [r10], al
+	skipZero:
 
 	mov rax, offset final ; output
 
