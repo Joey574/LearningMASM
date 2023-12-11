@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InputTest", "InputTest\Inpu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS03_02_Science_Quiz", "GS03_02_Science_Quiz\GS03_02_Science_Quiz.vcxproj", "{2EB6B911-B687-4FE6-9E64-311F0C4A17F9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS03_03_Computer_Quiz", "GS03_03_Computer_Quiz\GS03_03_Computer_Quiz.vcxproj", "{9F7B022D-8A15-434C-84D2-54EB47CDB93F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{2EB6B911-B687-4FE6-9E64-311F0C4A17F9}.Release|x64.Build.0 = Release|x64
 		{2EB6B911-B687-4FE6-9E64-311F0C4A17F9}.Release|x86.ActiveCfg = Release|Win32
 		{2EB6B911-B687-4FE6-9E64-311F0C4A17F9}.Release|x86.Build.0 = Release|Win32
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Debug|x64.ActiveCfg = Debug|x64
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Debug|x64.Build.0 = Debug|x64
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Debug|x86.Build.0 = Debug|Win32
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Release|x64.ActiveCfg = Release|x64
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Release|x64.Build.0 = Release|x64
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Release|x86.ActiveCfg = Release|Win32
+		{9F7B022D-8A15-434C-84D2-54EB47CDB93F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
