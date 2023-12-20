@@ -47,9 +47,7 @@ main PROC
 	; add ", " to end of name for output
 	mov rdx, offset userName
 	add rdx, rcx ; length offset
-	mov byte ptr [rdx], 0 ; remove new line
-	mov byte ptr [rdx-1], 0 ; remove new line
-	mov word ptr [rdx-2], " ,"
+	mov word ptr [rdx-2], " ," ; replace new line with comma
 
 
 	; QUIZ SECTION
