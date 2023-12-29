@@ -25,10 +25,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ce03e0b7-ac7a-46ef-b226-0385d2a31949}</ProjectGuid>
-    <RootNamespace>Textbook_EQU</RootNamespace>
+    <ProjectGuid>{1df32bb3-10e3-46c6-a59b-5a7b85fa6f30}</ProjectGuid>
+    <RootNamespace>Textbook_02_EQU</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Textbook_02_EQU</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
