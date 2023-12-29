@@ -2,20 +2,20 @@ ExitProcess PROTO
 
 .data
 
-var QWORD 100
-
 .code
 
 main PROC
-	
-	XOR RCX, RCX
-	XOR RDX, RDX
 
-	MOV RCX, 33
-	MOV RDX, RCX
-	MOV RCX, var
-	MOV var, RDX
+	xor rcx, rcx
 	
+	mov cl, 65
+	mov ch, 90
+
+	rol cx, 8
+
+	rol cx, 8
+	shr cx, 8
+
 	CALL ExitProcess
 	main ENDP
 	END
