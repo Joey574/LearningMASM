@@ -1,17 +1,21 @@
+ExitProcess PROTO
+
 .data
+
+var QWORD 100
 
 .code
 
 main PROC
-
-	push rbp
-	mov rbp, rsp
-
 	
-	mov rsp,rbp
-    pop rbp
+	XOR RCX, RCX
+	XOR RDX, RDX
 
-	ret
-
+	MOV RCX, 33
+	MOV RDX, RCX
+	MOV RCX, var
+	MOV var, RDX
+	
+	CALL ExitProcess
 	main ENDP
 	END
