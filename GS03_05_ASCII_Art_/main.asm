@@ -48,9 +48,9 @@ main PROC
 	thirdASCII:
 
 	mov rcx, offset ASCII3a
-	call Write
+	call WriteLine
 	mov rcx, offset ASCII3b
-	call Write
+	call WriteLine
 	mov rcx, offset ASCII3c
 	call WriteLine
 
