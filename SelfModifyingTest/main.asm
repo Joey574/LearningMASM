@@ -7,7 +7,7 @@ main PROC
 
 	MyLabel:
 		add eax, 5
-		nop ; nop so we don't overwrite ret instruction, which would've been included in the dword otherwise
+		nop									; nop so we don't overwrite ret instruction, which would've been included in the dword otherwise
 
 		ret
 
