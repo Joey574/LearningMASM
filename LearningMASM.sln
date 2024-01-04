@@ -85,6 +85,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS03_06_Non_Looping_Maze", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GS03_05_ASCII_Art_", "GS03_05_ASCII_Art_\GS03_05_ASCII_Art_.vcxproj", "{29F0297A-A81E-4A15-82F1-D1AB34F7D899}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SelfModifyingTest", "SelfModifyingTest\SelfModifyingTest.vcxproj", "{5723D112-7534-43EF-B254-28FBEB207A18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -421,6 +423,14 @@ Global
 		{29F0297A-A81E-4A15-82F1-D1AB34F7D899}.Release|x64.Build.0 = Release|x64
 		{29F0297A-A81E-4A15-82F1-D1AB34F7D899}.Release|x86.ActiveCfg = Release|Win32
 		{29F0297A-A81E-4A15-82F1-D1AB34F7D899}.Release|x86.Build.0 = Release|Win32
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Debug|x64.ActiveCfg = Debug|x64
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Debug|x64.Build.0 = Debug|x64
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Debug|x86.ActiveCfg = Debug|Win32
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Debug|x86.Build.0 = Debug|Win32
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Release|x64.ActiveCfg = Release|x64
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Release|x64.Build.0 = Release|x64
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Release|x86.ActiveCfg = Release|Win32
+		{5723D112-7534-43EF-B254-28FBEB207A18}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
