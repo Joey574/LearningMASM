@@ -17,19 +17,38 @@ main PROC
 
 		RR:
 
+			mov rcx, offset deadEndMessage
+			call WriteLine
+			jmp complete
+
 		RD:
 
 			RDR:
 
+				mov rcx, offset deadEndMessage
+				call WriteLine
+				jmp complete
+
+
 			RDL:
 
 				RDLU:
+
+					mov rcx, offset deadEndMessage
+					call WriteLine
+					jmp complete
+
 
 				RDLD:
 
 					RDLDR:
 
 						RDLDRR:
+
+							mov rcx, offset exitMessage
+							call WriteLine
+							jmp complete
+
 
 	D:
 
@@ -39,15 +58,35 @@ main PROC
 
 				DRUL:
 
+					mov rcx, offset deadEndMessage
+					call WriteLine
+					jmp complete
+
+
 				DRUR:
 
+					mov rcx, offset deadEndMessage
+					call WriteLine
+					jmp complete
+
+
 			DRR:
+
+				mov rcx, offset deadEndMessage
+				call WriteLine
+				jmp complete
+
 
 		DD:
 
 			DDR:
 
 				DDRR:
+
+					mov rcx, offset exitMessage
+					call WriteLine
+					jmp complete
+
 
 
 	deadEnd:
