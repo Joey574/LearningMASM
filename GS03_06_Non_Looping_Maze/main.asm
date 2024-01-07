@@ -233,8 +233,6 @@ main PROC
 					call WriteLine
 					jmp complete
 
-
-
 	deadEnd:
 	mov rcx, offset deadEndMessage
 	call WriteLine
