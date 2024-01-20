@@ -3,26 +3,25 @@ ExitProcess PROTO
 .data
 
 	src db 'abc'
-	found byte ?
+	dst db 'abc'
+	match db ?
 
 .code
 
 main PROC
 
-	xor rax, rax
-
-	mov al, 'b'
-	lea rdi, src
+	lea rsi, src
+	lea rdi, dst
 	mov rcx, sizeof src
 
 	cld
-	repne scasb
-	jnz absent
-	mov found, 1
-	jmp finish
+	repe cmpsb
 
-	absent:
-	mov found, 0
+	jnz differ
+	mov match, 1
+	jmp finish
+	differ:
+	mov match, 0
 	finish:
 
 	Call ExitProcess
