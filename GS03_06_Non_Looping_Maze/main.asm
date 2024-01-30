@@ -60,7 +60,7 @@ main PROC
 
 		RD:
 
-			mov rcx, offset m1
+			mov rcx, offset m2
 			call WriteLine
 			mov rcx, offset inputMessage
 			call Write
