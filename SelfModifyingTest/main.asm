@@ -3,7 +3,7 @@ MySegment segment read write execute
 main PROC
 	mov eax, 90
 
-	mov dword ptr MyLabel, 90 05 e8 83 h	; nop - 5 - subtract - I think
+	mov dword ptr MyLabel, 9005e883h	; nop - 5 - subtract - I think 90 - nop : 05 - #5 : e883 - Subtract eax
 
 	MyLabel:
 		add eax, 5
