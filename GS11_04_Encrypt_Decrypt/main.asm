@@ -2,6 +2,7 @@ extern ReadLine: proc
 extern Write: proc
 extern WriteLine: proc
 extern CopyArray: proc
+extern ConvertASCIIToNumber: proc
 
 MySegment segment read write execute
 
@@ -30,7 +31,7 @@ main PROC
 
 	call ReadLine			; get string to encrypt
 
-	push rcx				; store length
+	mov [len], rcx			; store string length
 
 	mov rcx, rax				; move string offset into rax
 	mov rdx, offset original	; get ready to copy message into variable
@@ -41,19 +42,21 @@ main PROC
 	
 	call Readline			; get number to rotate by
 
+	mov rcx, rax
+	call ConvertASCIIToNumber
+
 	mov [encrypt], al		; store encrypt value
 
-	pop rcx					; get length
-	mov [len], rcx			; store length
-
-
 	; loop to modify original message into encrypted one
+	xor rcx, rcx
 	l1:
-		add [original], encrypt
+		mov al, [original+rcx]
+		add al, encrypt
+		mov [original+rcx], al
 
-		dec rcx
-		cmp rcx, 0
-		jg l1
+		inc rcx
+		cmp rcx, len
+		jl l1
 
 
 	; Write encrypted message to screen
@@ -64,13 +67,15 @@ main PROC
 
 
 	; loop to modify encrypted message into decrypted one
-	mov rcx, len
+	xor rcx, rcx
 	l2:
-		sub [original], encrypt		
+		mov al, [original+rcx]
+		sub al, encrypt
+		mov [original+rcx], al		
 		
-		dec rcx
-		cmp rcx, 0
-		jg l2
+		inc rcx
+		cmp rcx, len
+		jl l2
 
 	; Write message and decrytped message
 	mov rcx, offset m2
