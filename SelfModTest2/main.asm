@@ -14,17 +14,20 @@ main PROC
 
 
 	mov word ptr MyLabel, 0c8ffh
-	mov dword ptr MyLabel + 2, 9000f883h
+	mov dword ptr MyLabel + 2, 00f883h
+	mov word ptr MyLabel + 5, 0f87fh
+
+	; 7f f8
+	; 7f f7
+	; 7f f6
 
 	MyLabel:
 		inc eax			; replaced w dec eax
-		nop				; next 3 replaced with cmp eax, 0
-		nop
-		nop
-		nop				; nop to prevent overwriting jg
-
-		jg MyLabel
-
+		nop				; replaced w cmp
+		nop				; replaced w cmp
+		nop				; replaced w cmp
+		nop				; replaced w jg
+		nop				; replaced w jg
 
 	nop
 
