@@ -49,12 +49,14 @@ main PROC
 
 	; loop to modify original message into encrypted one
 	xor rcx, rcx
+	lea rdx, original
 	l1:
-		mov al, [original+rcx]
+		mov al, [rdx]
 		add al, encrypt
-		mov [original+rcx], al
+		mov [rdx], al
 
 		inc rcx
+		inc rdx
 		cmp rcx, len
 		jl l1
 
@@ -68,12 +70,14 @@ main PROC
 
 	; loop to modify encrypted message into decrypted one
 	xor rcx, rcx
+	lea rdx, original
 	l2:
-		mov al, [original+rcx]
+		mov al, [rdx]
 		sub al, encrypt
-		mov [original+rcx], al		
+		mov [rdx], al		
 		
 		inc rcx
+		inc rdx
 		cmp rcx, len
 		jl l2
 

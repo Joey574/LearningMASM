@@ -13,38 +13,38 @@ main PROC
 	nop
 
 	MyLabel:
-	Mov al, 0FFh
+	inc rax
 	nop
-	Mov cl, 0FFh
+	inc rcx
 	nop
-	Mov dl, 0FFh
+	inc rdx
 	nop
-	Mov bl, 0FFh
+	inc rbx
 	nop
-	mov spl, 0FFh
+	inc rsp
 	nop
-	mov bpl, 0FFh
+	inc rbp
 	nop
-	mov sil, 0FFh
+	inc rsi
 	nop
-	mov dil, 0FFh
+	inc rdi
 	nop
 	nop
-	Mov r8w, 0FFh
+	inc r8
 	nop
-	Mov r9w, 0FFh
+	inc r9
 	nop
-	Mov r10w, 0FFh
+	inc r10
 	nop
-	Mov r11w, 0FFh
+	inc r11
 	nop
-	mov r12w, 0FFh
+	inc r12
 	nop
-	mov r13w, 0FFh
+	inc r13
 	nop
-	mov r14w, 0FFh
+	inc r14
 	nop
-	mov r15w, 0FFh
+	inc r15
 
 	nop
 	mov rsp,rbp
