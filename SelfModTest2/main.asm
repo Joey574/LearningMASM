@@ -9,7 +9,8 @@ main PROC
 	mov word ptr MyLabel + 5, 0f97fh	; jg MyLabel
 
 	MyLabel:
-		inc eax			; replaced w dec eax
+		nop
+		nop
 		nop				; replaced w cmp
 		nop				; replaced w cmp
 		nop				; replaced w cmp

@@ -1,7 +1,7 @@
 MySegment segment write read execute
 
-machine db 0ffh,0c8h,083h,0f8h,00h,07fh,0f9h
-binary db 11111111b,11001000b,10000011b,11111000b,00000000b,00000111b,11111001b
+; actual code
+binary db 11111111b,11001000b,10000011b,11111000b,00000000b,01111111b,11111001b
 
 main PROC
 
@@ -12,7 +12,7 @@ main PROC
 	nop
 
 	; copy machine code into mylabel location
-	mov rsi, offset machine
+	mov rsi, offset binary
     mov rdi, MyLabel
     mov ecx, 7
 
