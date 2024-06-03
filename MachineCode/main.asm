@@ -1,6 +1,6 @@
-.data
+MySegment segment write read execute
 
-.code
+machine db 0c8h,0ffh,00,0f8h,083h,0f9h,07fh
 
 main PROC
 
@@ -8,43 +8,27 @@ main PROC
 	mov rbp, rsp
 
 	lea rcx, MyLabel
-	nop
-	nop
-	nop
+	lea rax, machine
+
+	mov esi, [machine]               ; Load source address into SI
+    mov edi, MyLabel              ; Load destination address into DI
+    mov ecx, 7                     ; Number of bytes to move
+
+	copy_loop:
+		movsb                           ; Move a byte from [SI] to [DI]
+		loop copy_loop                  ; Repeat until CX becomes zero
+
+		nop
+	
 
 	MyLabel:
-	inc rax
-	nop
-	inc rcx
-	nop
-	inc rdx
-	nop
-	inc rbx
-	nop
-	inc rsp
-	nop
-	inc rbp
-	nop
-	inc rsi
-	nop
-	inc rdi
-	nop
-	nop
-	inc r8
-	nop
-	inc r9
-	nop
-	inc r10
-	nop
-	inc r11
-	nop
-	inc r12
-	nop
-	inc r13
-	nop
-	inc r14
-	nop
-	inc r15
+		inc eax			; replaced w dec eax
+		nop				; replaced w cmp
+		nop				; replaced w cmp
+		nop				; replaced w cmp
+		nop				; replaced w jg
+		nop				; replaced w jg
+
 
 	nop
 	mov rsp,rbp
@@ -53,4 +37,5 @@ main PROC
 	ret
 
 	main ENDP
+	mysegment ends
 	END
